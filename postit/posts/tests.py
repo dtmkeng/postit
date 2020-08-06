@@ -11,8 +11,8 @@ class PostTest(TestCase):
         caption = 'new normal'
         post_by = 'pm. jan'
         location = 'thai'
-        #When
         
+        #When
         result = Post.objects.create(
             caption = caption,
             post_by = post_by,
