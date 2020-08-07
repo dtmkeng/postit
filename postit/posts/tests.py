@@ -2,7 +2,7 @@ from django.test import TestCase
 from .models import Post
 
 # Create your tests here.
-class PostTest(TestCase):
+class PostModelTest(TestCase):
     def test_is_shoud_instance_of_post(self): 
         self.assertEqual(isinstance(Post.objects.create(), Post), True)
         
