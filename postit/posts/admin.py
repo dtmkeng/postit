@@ -3,5 +3,9 @@ from .models import Post
 
 # Register your models here.
 @admin.register(Post)
-class PostItAdmin(admin.ModelAdmin):
-    pass
+class PostAdmin(admin.ModelAdmin):
+    list_display = (
+        'caption',
+        'post_by',
+        'location',
+    )
