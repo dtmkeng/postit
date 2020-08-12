@@ -12,7 +12,6 @@ class PostViewsTest(TestCase):
         caption = 'new normal'
         post_by = 'pm. jan'
         location = 'thai'
-        
         post = Post.objects.create(
             caption = caption,
             post_by = post_by,
@@ -27,5 +26,16 @@ class PostViewsTest(TestCase):
             "location":location,
         }]))
         
-    
-    
+    def test_should_get_post_data_after_create(self):
+        req = {
+            "caption":'caption1',
+            "post_by":'post_by',
+            "location":'location',
+        }
+        req_json = json.dumps(req)
+        responces = self.client.post('/post/', req_json, content_type='application/json')
+        posts = Post.objects.all()
+
+        assert responces.status_code == 200
+        assert len(posts) == 1
+        
