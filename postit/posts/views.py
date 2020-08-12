@@ -23,12 +23,14 @@ class PostView(View):
         return HttpResponse(json.dumps(post_list), content_type='application/json')
     
     def post(self, request):
-        data = json.loads(request.body.decode('utf-8'))
-        print(data['caption'])
+        try:
+            data = json.loads(request.body.decode('utf-8'))
+            result = Post.objects.create(
+                caption = data['caption'],
+                post_by = data['post_by'],
+                location = data['location'],
+            )
+            return HttpResponse(200)
+        except expression:
+            return HttpResponse(500)
         
-        result = Post.objects.create(
-            caption = data['caption'],
-            post_by = data['post_by'],
-            location = data['location'],
-        )
-        return HttpResponse(200)
