@@ -1,0 +1,6 @@
+- model: students.student
+  pk: 1
+  fields:
+    name: 'noon'
+    age: 10
+    gender: 1

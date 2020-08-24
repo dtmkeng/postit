@@ -17,6 +17,7 @@ class StudentSerializerTest(TestCase):
         expected =  {
                 'name':'keng',
                 'age':'12',
+                'gender': None,
         }
         
         assert serializer.data == expected

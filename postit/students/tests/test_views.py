@@ -15,6 +15,7 @@ class StudentViewTest(APITestCase):
             {
                 'name':'keng',
                 'age':'10', 
+                'gender': None,
             }
         ]
         

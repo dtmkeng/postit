@@ -1,0 +1,4 @@
+- model: students.gender
+  pk: 1
+  fields:
+    gender: 'man'
